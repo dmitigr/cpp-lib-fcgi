@@ -14,8 +14,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+#include "../../base/rnd.hpp"
 #include "../../fcgi/fcgi.hpp"
-#include "../../rnd/string.hpp"
 
 #include <iostream>
 
@@ -34,7 +34,7 @@ int main()
     while (true) {
       if (const auto conn = server.accept()) {
         conn->out() << "Content-Type: text/plain" << fcgi::crlfcrlf;
-        const std::string str = rnd::random_string("abc", str_size);
+        const auto str = rnd::str("abc", str_size);
         conn->out() << str << "\n" << str_size;
         str_size += rnd::week_integer<std::string::size_type>(0, str_size);
       }
