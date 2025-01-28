@@ -17,11 +17,11 @@
 #ifndef DMITIGR_FCGI_LISTENER_OPTIONS_HPP
 #define DMITIGR_FCGI_LISTENER_OPTIONS_HPP
 
-#include "../base/fsx.hpp"
 #include "../net/listener.hpp"
 #include "dll.hpp"
 #include "types_fwd.hpp"
 
+#include <filesystem>
 #include <optional>
 #include <string>
 
